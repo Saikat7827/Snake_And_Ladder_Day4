@@ -6,7 +6,7 @@ public class SnakeLadder {
 	static final int noPlay = 0;
 	static final int ladder = 1;
 	static final int snake = 2;
-	
+	static int count = 0;
 	
 	public static void main(String[] args) {
 		int position = 0;
@@ -14,6 +14,7 @@ public class SnakeLadder {
 		while (position < 100) {
 		Random ran = new Random();
         int dice = ran.nextInt(6)+1;
+        ++count; 
         
 		System.out.println("dice: " + dice);
         int optionCheck = ran.nextInt(3);
@@ -39,7 +40,7 @@ public class SnakeLadder {
 		if (position < 0)
 			position = 0;
 		
-		System.out.println("position: " + position);
+		System.out.println("position: " + position+ "\nDice count" + count);
 		}       
         
 	}
