@@ -3,13 +3,39 @@ package com.bridgelabz.snakeladder;
 import java.util.Random;
 
 public class SnakeLadder {
+	static int snake = 2;
+	static int ladder = 1;
+	static int noplay = 0;
+	
 	public static void main(String[] args) {
 		int position = 0;
-		System.out.println("Initial position of the player " + position);
 		Random ran = new Random();
-		int dice = ran.nextInt(6);
-		System.out.println("Dice Outcome" + dice);
-
+		int dice = ran.nextInt(6)+1;
+		System.out.println("Dice Outcome : "+dice);
+		System.out.println("dice: "+dice);
+		
+		int optionCheck = ran.nextInt(3);
+		System.out.println("optionCheck: "+optionCheck);
+		
+		if (optionCheck == ladder)
+		{
+			System.out.println("Ladder");
+			position = position + dice;
+			
+		}
+		
+		else if (optionCheck == snake && position > dice)
+		{
+			System.out.println("Snake");
+			position = position - dice;
+			
+		}
+		else {
+			System.out.println("No Play");
+			
+		}
+		System.out.println("position: "+position);
+		
+		
 	}
-
 }
